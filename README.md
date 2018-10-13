@@ -4,8 +4,8 @@
 - [`Session`](#session)
 
 ## Other:
-- [`Response Codes`](#codes)
-- [`WebSocket Token`](#websocket)
+- [`Response Codes`](#response-codes)
+- [`WebSocket Token`](#websocket-token)
 - [`SID`](#sid)
 - [`CK`](#ck)
 
@@ -68,15 +68,15 @@
 
 | Key | Value | Description |
 |-|-|-|
-| `channel_id` | `string` | [WebSocket Token](#websocket) |
+| `channel_id` | `string` | [WebSocket Token](#websocket-token) |
 | `sid` | `string` | [SID](#sid) |
 | `avatar` | `url` | Thumbnail avatar (40x40) |
 | `name` | `string` | Nickname |
 | `CK` | `string` | Last four digits of [SID](#sid) ([CK](#ck)) |
 | `nid` | `int` | User id |
-| `code` | `int` | [Response codes](#codes) |
+| `code` | `int` | [Response Codes](#response-codes) |
 
-## Response codes:
+## Response Codes:
 
 ## WebSocket Token:
 
