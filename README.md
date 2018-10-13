@@ -1,20 +1,20 @@
 # API of Spaces.ru
 
 ## Available methods:
-- [`Session`](#Session)
+- [`Session`](#session)
 
 ## Other:
-- [`Response Codes`](#Codes)
-- [`WebSocket`](#WebSocket)
-- [`SID`](#SID)
-- [`CK`](#CK)
+- [`Response Codes`](#codes)
+- [`WebSocket Token`](#websocket)
+- [`SID`](#sid)
+- [`CK`](#ck)
 
 ## Special HTTP headers:
 | Params | Value | Description |
 |-|-|-|
 | `Content-Type` | `multipart/form-data` | Used to send data ([Wikipedia](https://ru.wikipedia.org/wiki/Multipart/form-data)) |
 | `X-Proxy` | `spaces` | Special header (Required) |
-| `Cookie` | `json=1` or `json=1; sid=`[SESSION_TOKEN](#SID) | Required to get JSON. Also used as GET parameter `https://spcs.me/?json=1` |
+| `Cookie` | `json=1` or `json=1; sid=`[SID](#sid) | Required to get JSON. Also used as GET parameter `https://spcs.me/?json=1` |
 
 ## Session:
 ### POST `https://spcs.me/neoapi/session`
@@ -68,17 +68,17 @@
 
 | Key | Value | Description |
 |-|-|-|
-| `channel_id` | `string` | [WebSocket Token](#WebSocket) |
-| `sid` | `string` | [Session Token](#SID) |
+| `channel_id` | `string` | [WebSocket Token](#websocket) |
+| `sid` | `string` | [SID](#sid) |
 | `avatar` | `url` | Thumbnail avatar (40x40) |
 | `name` | `string` | Nickname |
-| `CK` | `string` | Last four digits of [Session Token](#SID) ([Using](#CK)) |
+| `CK` | `string` | Last four digits of [SID](#sid) ([CK](#ck)) |
 | `nid` | `int` | User id |
-| `code` | `int` | [Response code](#Codes) |
+| `code` | `int` | [Response codes](#codes) |
 
-## Codes:
+## Response codes:
 
-## WebSocket:
+## WebSocket Token:
 
 ## SID:
 
