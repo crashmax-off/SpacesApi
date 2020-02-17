@@ -6,6 +6,7 @@
 	- [`login`](#login)
 	- [`logout`](#logout)
 	- [`check`](#check)
+	- [`captcha`](#captcha)
 	- [`getOAuthLinks`](#getoauthlinks)
 
 ## Other:
@@ -31,7 +32,7 @@
 | `login` | `string` | Nickname (3-15), E-mail or phone number |
 | `password` | `string` | Username password (6-20) |
 | `method` | `login` | Authorization method |
-| `rid` | `APA91bFwsPw4clF4y0RHWtg6Y4fC6UnxcrmZYLiko_ifv-8g7Qi-5koV4GRaVax5zMWTMke9eUF-MzHhzdM9iYQEFDff5lnHuMlwIl-zNAu4MfYS4PlL0j8C28XZgNJmQbRSd1BE4eSW` | API Token (Required) |
+<!-- | `rid` | `APA91bFwsPw4clF4y0RHWtg6Y4fC6UnxcrmZYLiko_ifv-8g7Qi-5koV4GRaVax5zMWTMke9eUF-MzHhzdM9iYQEFDff5lnHuMlwIl-zNAu4MfYS4PlL0j8C28XZgNJmQbRSd1BE4eSW` | API Token (Required) | -->
 
 ### Response Data:
 
@@ -91,7 +92,7 @@
 | Params | Value | Description |
 |-|-|-|
 | `method` | `logout` | Logout method |
-| `rid` | `APA91bFwsPw4clF4y0RHWtg6Y4fC6UnxcrmZYLiko_ifv-8g7Qi-5koV4GRaVax5zMWTMke9eUF-MzHhzdM9iYQEFDff5lnHuMlwIl-zNAu4MfYS4PlL0j8C28XZgNJmQbRSd1BE4eSW` | API Token (Required) |
+<!-- | `rid` | `APA91bFwsPw4clF4y0RHWtg6Y4fC6UnxcrmZYLiko_ifv-8g7Qi-5koV4GRaVax5zMWTMke9eUF-MzHhzdM9iYQEFDff5lnHuMlwIl-zNAu4MfYS4PlL0j8C28XZgNJmQbRSd1BE4eSW` | API Token (Required) | -->
 
 ### Response Data:
 
@@ -124,7 +125,7 @@
 | Params | Value | Description |
 |-|-|-|
 | `method` | `check` | Check session method |
-| `rid` | `APA91bFwsPw4clF4y0RHWtg6Y4fC6UnxcrmZYLiko_ifv-8g7Qi-5koV4GRaVax5zMWTMke9eUF-MzHhzdM9iYQEFDff5lnHuMlwIl-zNAu4MfYS4PlL0j8C28XZgNJmQbRSd1BE4eSW` | API Token (Required) |
+<!-- | `rid` | `APA91bFwsPw4clF4y0RHWtg6Y4fC6UnxcrmZYLiko_ifv-8g7Qi-5koV4GRaVax5zMWTMke9eUF-MzHhzdM9iYQEFDff5lnHuMlwIl-zNAu4MfYS4PlL0j8C28XZgNJmQbRSd1BE4eSW` | API Token (Required) | -->
 
 ### Response Data:
 
@@ -178,6 +179,37 @@
 | `nid` | `int` | User id |
 | `code` | `int` | [Response Codes](#response-codes) |
 
+## captcha:
+### POST `https://spcs.me/neoapi/session`
+
+For [`login`](#login) add param to send captcha for succes login.
+
+| Params | Value | Description |
+|-|-|-|
+| `code` | `string` | Captcha code |
+
+### Response Data:
+
+``` JSON
+{
+  "css_files": [],
+  "time": 1581936706,
+  "config": {
+    "icons": {
+      "baseurl": "https://spac.me/i/"
+    }
+  },
+  "captcha_url": "https://spcs.me/captcha/1825110862431578.png?1581936706",
+  "t": 0.504801988601685,
+  "code": "00001"
+}
+```
+
+| Key | Value | Description |
+|-|-|-|
+| `captcha_url` | `url` | Raster captcha |
+| `code` | `int` | [Response Codes](#response-codes) |
+
 ## getOAuthLinks:
 ### POST `https://spcs.me/neoapi/common`
 
@@ -189,35 +221,32 @@
 
 ``` JSON
 {
-	"css_files": [],
-	"time": 1539685368,
-	"config": {
-		"large_display_min_width": 480,
-		"thumbs": {
-			"baseurl": "http://tsx.spaces.ru/"
-		},
-		"TOUCH_INTERFACE_SCREEN_WIDTH": 320,
-		"icons": {
-			"baseurl": "https://spac.me/i/"
-		}
-	},
-	"urls": {
-		"ok_login_URL": "https://spcs.me/oauth/?CK=4434&amp;P=2&amp;redirect_uri=registration/external/&amp;sid=0837524164004434&amp;state=CK:4434,Link_id:0,S:2,sid:0837524164004434,permissions_granted:VALUABLE_ACCESS;GET_EMAIL",
-		"vk_login_URL": "https://spcs.me/oauth/?CK=4434&amp;P=1&amp;redirect_uri=registration/external/&amp;sid=0837524164004434&amp;state=CK:4434,Link_id:0,S:1,sid:0837524164004434",
-		"facebook_login_URL": "https://spcs.me/oauth/?CK=4434&amp;P=4&amp;redirect_uri=registration/external/&amp;sid=0837524164004434&amp;state=CK:4434,Link_id:0,S:4,sid:0837524164004434",
-		"mail_ru_login_URL": "https://spcs.me/oauth/?CK=4434&amp;P=3&amp;redirect_uri=registration/external/&amp;sid=0837524164004434&amp;state=CK:4434,Link_id:0,S:3,sid:0837524164004434"
-	},
-	"t": 0.00297307968139648,
-	"code": "00000"
+  "urls": {
+    "vk_login_URL": "https://gdespaces.com/oauth/?CK=9458&amp;P=1&amp;redirect_uri=registration/external/&amp;sid=5545564189339458&amp;state=CK%3A9458%2CLink_id%3A0%2CS%3A1",
+    "google_login_URL": "https://gdespaces.com/oauth/?CK=9458&amp;P=6&amp;redirect_uri=registration/external/&amp;sid=5545564189339458&amp;state=CK%3A9458%2CLink_id%3A0%2CS%3A6",
+    "mail_ru_login_URL": "https://gdespaces.com/oauth/?CK=9458&amp;P=3&amp;redirect_uri=registration/external/&amp;sid=5545564189339458&amp;state=CK%3A9458%2CLink_id%3A0%2CS%3A3",
+    "facebook_login_URL": "https://gdespaces.com/oauth/?CK=9458&amp;P=4&amp;redirect_uri=registration/external/&amp;sid=5545564189339458&amp;state=CK%3A9458%2CLink_id%3A0%2CS%3A4",
+    "ok_login_URL": "https://gdespaces.com/oauth/?CK=9458&amp;P=2&amp;redirect_uri=registration/external/&amp;sid=5545564189339458&amp;state=CK%3A9458%2CLink_id%3A0%2CS%3A2%2Cpermissions_granted%3AVALUABLE_ACCESS%3BGET_EMAIL"
+  },
+  "config": {
+    "icons": {
+      "baseurl": "https://spac.me/i/"
+    }
+  },
+  "time": 1581937332,
+  "t": 0.00232291221618652,
+  "code": "00000",
+  "css_files": []
 }
 ```
 
 | Key | Value | Description |
 |-|-|-|
-| `ok_login_URL` | `url` | [Odnoklassniki](https://apiok.ru/ext/oauth/) |
-| `vk_login_URL` | `url` | [Vkontakte](https://vk.com/dev/auth_sites) |
-| `facebook_login_URL` | `url` | [Facebook](https://developers.facebook.com/docs/facebook-login/web/) |
-| `mail_ru_login_URL` | `url` | [Mail.ru](https://api.mail.ru/docs/guides/oauth/) |
+| `ok_login_URL` | `url` | [ok.ru](https://apiok.ru/ext/oauth/) |
+| `vk_login_URL` | `url` | [vk.com](https://vk.com/dev/auth_sites) |
+| `facebook_login_URL` | `url` | [facebook.com](https://developers.facebook.com/docs/facebook-login/web/) |
+| `mail_ru_login_URL` | `url` | [mail.ru](https://api.mail.ru/docs/guides/oauth/) |
+| `google_login_URL` | `url` | [google.com](https://developers.google.com/identity/protocols/OAuth2) |
 | `code` | `int` | [Response Codes](#response-codes) |
 
 ## Response Codes:
@@ -279,84 +308,84 @@
 
 | Key | Value | Description |
 |-|-|-|
-| `ERR_CONTACT_NOT_FOUND`: `02001` | |
-| `ERR_MESSAGE_ERROR`: `02002` | |
-| `ERR_SPAM_CONTROL`: `02003` | |
-| `ERR_ADMIN_SEND_DENIED`: `02004` | |
-| `ERR_GARBAGE_IS_CLEARING`: `02005` | |
-| `ERR_CONTACT_IS_SWAPPING`: `02006` | |
-| `ERR_MESSAGE_NOT_FOUND`: `02007` | |
-| `ERR_WRONG_EMAIL_FORMAT`: `02008` | |
-| `ERR_MESSAGE_SEND_DENIED`: `02009` | |
-| `ERR_DUP_MESSAGE`: `02010` | |
-| `ERR_WRONG_PHONE_FORMAT`: `02011` | |
-| `ERR_TOO_LARGE_ATTACHES_WEIGHT`: `02012` | |
-| `ERR_SPAMING_INNER_CONTACT`: `02013` | |
-| `ERR_TALK_NOT_FOUND`: `02014` | |
+| `ERR_CONTACT_NOT_FOUND` | `02001` | |
+| `ERR_MESSAGE_ERROR` | `02002` | |
+| `ERR_SPAM_CONTROL` | `02003` | |
+| `ERR_ADMIN_SEND_DENIED` | `02004` | |
+| `ERR_GARBAGE_IS_CLEARING` | `02005` | |
+| `ERR_CONTACT_IS_SWAPPING` | `02006` | |
+| `ERR_MESSAGE_NOT_FOUND` | `02007` | |
+| `ERR_WRONG_EMAIL_FORMAT` | `02008` | |
+| `ERR_MESSAGE_SEND_DENIED` | `02009` | |
+| `ERR_DUP_MESSAGE` | `02010` | |
+| `ERR_WRONG_PHONE_FORMAT` | `02011` | |
+| `ERR_TOO_LARGE_ATTACHES_WEIGHT` | `02012` | |
+| `ERR_SPAMING_INNER_CONTACT` | `02013` | |
+| `ERR_TALK_NOT_FOUND` | `02014` | |
 
 ### Reg:
 
 | Key | Value | Description |
 |-|-|-|
-| `ERR_WRONG_CONTACT`: `03001` | |
-| `ERR_CONTACT_ALREADY_USED`: `03002` | |
-| `ERR_CONTACT_ALREADY_REGISTERED`: `03003` | |
-| `ERR_IP_LIMIT_EXCEEDED`: `03004` | |
+| `ERR_WRONG_CONTACT` | `03001` | |
+| `ERR_CONTACT_ALREADY_USED` | `03002` | |
+| `ERR_CONTACT_ALREADY_REGISTERED` | `03003` | |
+| `ERR_IP_LIMIT_EXCEEDED` | `03004` | |
 
 ### Friends:
 
 | Key | Value | Description |
 |-|-|-|
-| `ERR_HIS_LIMIT_EXCEEDED`: `04001` | |
-| `ERR_YOUR_LIMIT_EXCEEDED`: `04002` | |
-| `ERR_OFFER_EXISTS`: `04003` | |
-| `ERR_ALREADY_FRIENDS`: `04004` | |
-| `ERR_OFFER_BLOCKED`: `04005` | |
-| `ERR_FRIEND_NOT_FOUND`: `04006` | |
-| `ERR_PENDING_NOT_FOUND`: `04007` | |
-| `ERR_FROM`: `04008` | |
-| `ERR_EMAIL_USED`: `04009` | |
-| `ERR_INVITE_EXISTS`: `04010` | |
+| `ERR_HIS_LIMIT_EXCEEDED` | `04001` | |
+| `ERR_YOUR_LIMIT_EXCEEDED` | `04002` | |
+| `ERR_OFFER_EXISTS` | `04003` | |
+| `ERR_ALREADY_FRIENDS` | `04004` | |
+| `ERR_OFFER_BLOCKED` | `04005` | |
+| `ERR_FRIEND_NOT_FOUND` | `04006` | |
+| `ERR_PENDING_NOT_FOUND` | `04007` | |
+| `ERR_FROM` | `04008` | |
+| `ERR_EMAIL_USED` | `04009` | |
+| `ERR_INVITE_EXISTS` | `04010` | |
 
 ### Chat:
 
 | Key | Value | Description |
 |-|-|-|
-| `ERR_ATTACH_SEND_DENIED`: `05001` | |
-| `ERR_ROOM_NOT_FOUND`: `05002` | |
-| `ERR_CONTACT_DENIED`: `05003` | |
-| `ERR_BANNED`: `05004` | |
-| `ERR_NEWBIE`: `05005` | |
-| `ERR_FORBIDDEN`: `05006` | |
-| `ERR_SHUTUP`: `05007` | |
-| `ERR_MESSAGE_PARAMS`: `05008` | |
-| `ERR_SPAM`: `05009` | |
-| `ERR_DUP_MESSAGE`: `05010` | |
-| `ERR_COMPLAIN`: `05011` | |
-| `ERR_MESSAGE_NOT_FOUND`: `05012` | |
-| `ERR_USER_ISNT_FRIEND`: `05013` | |
+| `ERR_ATTACH_SEND_DENIED` | `05001` | |
+| `ERR_ROOM_NOT_FOUND` | `05002` | |
+| `ERR_CONTACT_DENIED` | `05003` | |
+| `ERR_BANNED` | `05004` | |
+| `ERR_NEWBIE` | `05005` | |
+| `ERR_FORBIDDEN` | `05006` | |
+| `ERR_SHUTUP` | `05007` | |
+| `ERR_MESSAGE_PARAMS` | `05008` | |
+| `ERR_SPAM` | `05009` | |
+| `ERR_DUP_MESSAGE` | `05010` | |
+| `ERR_COMPLAIN` | `05011` | |
+| `ERR_MESSAGE_NOT_FOUND` | `05012` | |
+| `ERR_USER_ISNT_FRIEND` | `05013` | |
 
 ### Forum:
 
 | Key | Value | Description |
 |-|-|-|
-| `ERR_COMMENT_NOT_FOUND`: `06001` | |
-| `ERR_TOPIC_NOT_FOUND`: `06002` | |
-| `ERR_FORUM_NOT_FOUND`: `06003` | |
-| `ERR_FORUM_IN_GARBAGE`: `06004` | |
+| `ERR_COMMENT_NOT_FOUND` | `06001` | |
+| `ERR_TOPIC_NOT_FOUND` | `06002` | |
+| `ERR_FORUM_NOT_FOUND` | `06003` | |
+| `ERR_FORUM_IN_GARBAGE` | `06004` | |
 
 ### Trash:
 
 | Key | Value | Description |
 |-|-|-|
-| `ERR_OBJ_DELETED`: `07001` | |
-| `ERR_OBJ_RESTORED`: `07002` | |
+| `ERR_OBJ_DELETED` | `07001` | |
+| `ERR_OBJ_RESTORED` | `07002` | |
 
 ### Voting:
 
 | Key | Value | Description |
 |-|-|-|
-| `ERR_VOTE_NOT_FOUND`: `08001` | |
+| `ERR_VOTE_NOT_FOUND` | `08001` | |
 
 ### Files:
 
