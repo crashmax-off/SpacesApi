@@ -1,0 +1,350 @@
+{
+    "session": {
+        "login": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Авторизация",
+            "parameters": [
+                {
+                    "name": "login",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Никнейм (3-15), E-mail or phone number"
+                },
+                {
+                    "name": "password",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Пароль (6-20)"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Captcha code"
+                }
+            ]
+        },
+        "logout": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Аннулируем сессию"
+        },
+        "check": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Статус сессии"
+        }
+    },
+    "common": {
+        "getOAuthLinks": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Получаем ссылки для авторизации через социальные сети"
+        },
+        "refreshWidget": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Обновляем виджет???",
+            "parameters": [
+                {
+                    "name": "widgets",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Неизвестно"
+                }
+            ]
+        }
+    },
+    "user_activity": {
+        "getItems": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Комментарии???",
+            "parameters": [
+                {
+                    "name": "Oid",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Идентификатор блога"
+                }
+            ]
+        }
+    },
+    "anketa": {
+        "photoAreaEdit": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Миниатюра аватара",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "Pa",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Пример: 300300000 (Вертикаль: 000-999, Горизонталь: 000-999, Размер: 000-360)   "
+                }
+            ]
+        },
+        "photoEdit": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Изменить аватар аватар",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "photo",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Идентификатор фото (Lii)"
+                }
+            ]
+        },
+        "photoDelete": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Удаляем аватар",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "photo",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Идентификатор фото (Lii)"
+                }
+            ]
+        }
+    },
+    "system_prof": {
+        "fetch_frames": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Неизвестно (только для админов)"
+        },
+        "get_token": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Неизвестно (только для админов)"
+        },
+        "get_stats": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Неизвестно (только для админов)"
+        }
+    },
+    "blogs": {
+        "hideChannel": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Фильтр каналов",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "Channel",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Каналы: https://spaces.im/blogs/filters/"
+                },
+                {
+                    "name": "Hide",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "Скрыть канал"
+                },
+                {
+                    "name": "Unhide",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "Показать канал"
+                }
+            ]
+        }
+    },
+    "chat": {
+        "invite": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Приглашение в чат",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "frIends",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Никнейм друга"
+                },
+                {
+                    "name": "Rid",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Идентификатор чата"
+                }
+            ]
+        },
+        "sendMessage": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Отправляем сообщение в чате",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "msg",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Текст сообщения"
+                },
+                {
+                    "name": "Rid",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Идентификатор чата"
+                }
+            ]
+        },
+        "getMessages": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Неизвестно???",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "IdS",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Неизвестно"
+                },
+                {
+                    "name": "Op",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Неизвестно"
+                }
+            ]
+        },
+        "callModer": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Жалоба на сообщение в чате",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "Call_moder",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Идентификатор сообщения"
+                }
+            ]
+        },
+        "revealAttaches": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Показать вложение (для модераторов)",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "Msg_id",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Идентификатор сообщения"
+                }
+            ]
+        },
+        "hideAttaches": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Скрыть вложение (для модераторов)",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "Msg_id",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Идентификатор сообщения"
+                }
+            ]
+        }
+    },
+    "services": {
+        "searchCity": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Поиск города",
+            "parameters": [
+                {
+                    "name": "q",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Поиск"
+                },
+                {
+                    "name": "O",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "Место рождения"
+                },
+                {
+                    "name": "L",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Стандартное значение: 5"
+                },
+                {
+                    "name": "M",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "Место проживания"
+                }
+            ]
+        }
+    }
+}
