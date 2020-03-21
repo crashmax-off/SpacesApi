@@ -9,7 +9,7 @@
                     "name": "login",
                     "type": "string",
                     "optional": false,
-                    "description": "Никнейм (3-15), E-mail or phone number"
+                    "description": "Никнейм (3-15), E-mail или номер телефона"
                 },
                 {
                     "name": "password",
@@ -21,7 +21,7 @@
                     "name": "code",
                     "type": "string",
                     "optional": true,
-                    "description": "Captcha code"
+                    "description": "Капча"
                 }
             ]
         },
@@ -94,7 +94,7 @@
         "photoEdit": {
             "version": 1,
             "httpmethod": "POST",
-            "description": "Изменить аватар аватар",
+            "description": "Изменить аватар пользователя",
             "parameters": [
                 {
                     "name": "CK",
