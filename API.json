@@ -34,6 +34,19 @@
             "version": 1,
             "httpmethod": "POST",
             "description": "Статус сессии"
+        },
+        "adultCheck": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Проверка 18+",
+            "parameters": [
+                {
+                    "name": "Passed",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "-"
+                }
+            ]
         }
     },
     "common": {
