@@ -418,7 +418,7 @@
         "popupWidget": {
             "version": 1,
             "httpmethod": "POST",
-            "description": "Всплывающий виджет пользователя",
+            "description": "Виджет пользователя",
             "parameters": [
                 {
                     "name": "User",
@@ -433,13 +433,71 @@
         "popupWidget": {
             "version": 1,
             "httpmethod": "POST",
-            "description": "Всплывающий виджет сообществ",
+            "description": "Виджет сообщества",
             "parameters": [
                 {
                     "name": "Comm",
                     "type": "string",
                     "optional": false,
                     "description": "Идентификатор сообщества (175519)"
+                }
+            ]
+        }
+    },
+    "friends": {
+        "inviteSMS": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Инвайт на регистрацию через SMS",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "phone",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Номер должен состоять от 10 до 13 цифр, которые идут после +"
+                },
+                {
+                    "name": "from",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Представьтесь (Вася Пупки)"
+                }
+            ]
+        },
+        "inviteEmail": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Инвайт на регистрацию через E-mail",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "email",
+                    "type": "string",
+                    "optional": false,
+                    "description": "E-mail друга"
+                },
+                {
+                    "name": "from",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Представьтесь (Вася Пупки)"
+                },
+                {
+                    "name": "text",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Текст сообщения"
                 }
             ]
         }
