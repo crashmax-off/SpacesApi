@@ -560,5 +560,26 @@
                 }
             ]
         }
-    }
+    },
+    "mail": {
+        "getContactsByIds": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Диалог в почте",
+            "parameters": [
+                {
+                    "name": "CoNtacts",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Идентификатор диалога"
+                },
+                {
+                    "name": "List",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "-"
+                }
+            ]
+        }
+    },
 }
