@@ -346,5 +346,38 @@
                 }
             ]
         }
+    },
+    "settings": {
+        "navi": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Получаем футер??????",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "Rw",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "-"
+                },
+                {
+                    "name": "Ti",
+                    "type": "string",
+                    "optional": false,
+                    "description": "-"
+                },
+                {
+                    "name": "Link_id",
+                    "type": "string",
+                    "optional": false,
+                    "description": "-"
+                }
+            ]
+        }
     }
 }
