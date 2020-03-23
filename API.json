@@ -431,7 +431,15 @@
         "isOnline": {
             "version": 1,
             "httpmethod": "POST",
-            "description": "Друзья онлайн"
+            "description": "Друзья онлайн",
+            "parameters": [
+                {
+                    "name": "_",
+                    "type": "string",
+                    "optional": false,
+                    "description": "-"
+                }
+            ]
         }
     },
     "comm": {
