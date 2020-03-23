@@ -427,6 +427,11 @@
                     "description": "user_id пользователя"
                 }
             ]
+        },
+        "isOnline": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Друзья онлайн"
         }
     },
     "comm": {
