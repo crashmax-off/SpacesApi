@@ -501,5 +501,32 @@
                 }
             ]
         }
+    },
+    "lenta": {
+        "getItems": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Лента",
+            "parameters": [
+                {
+                    "name": "Oid",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Идентификатор записи"
+                },
+                {
+                    "name": "O",
+                    "type": "string",
+                    "optional": false,
+                    "description": "offset"
+                },
+                {
+                    "name": "Short",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "Расширенный вид: 0, Краткий вид: 1"
+                }
+            ]
+        }
     }
 }
