@@ -413,5 +413,20 @@
                 }
             ]
         }
+    },
+    "users": {
+        "popupWidget": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Всплывающий виджет пользователя",
+            "parameters": [
+                {
+                    "name": "User",
+                    "type": "string",
+                    "optional": false,
+                    "description": "user_id пользователя"
+                }
+            ]
+        }
     }
 }
