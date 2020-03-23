@@ -428,5 +428,20 @@
                 }
             ]
         }
+    },
+    "comm": {
+        "popupWidget": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Всплывающий виджет сообществ",
+            "parameters": [
+                {
+                    "name": "Comm",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Идентификатор сообщества (175519)"
+                }
+            ]
+        }
     }
 }
