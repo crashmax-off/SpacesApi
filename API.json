@@ -141,6 +141,25 @@
                     "description": "Идентификатор фото (Lii)"
                 }
             ]
+        },
+        "getSections": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Разделы анкеты",
+            "parameters": [
+                {
+                    "name": "CK",
+                    "type": "string",
+                    "optional": false,
+                    "description": "CSRF"
+                },
+                {
+                    "name": "User",
+                    "type": "string",
+                    "optional": false,
+                    "description": "user_id пользователя"
+                }
+            ]
         }
     },
     "system_prof": {
@@ -431,13 +450,13 @@
         "isOnline": {
             "version": 1,
             "httpmethod": "POST",
-            "description": "Друзья онлайн",
+            "description": "Пользователь онлайн",
             "parameters": [
                 {
-                    "name": "_",
+                    "name": "UsErs",
                     "type": "string",
                     "optional": false,
-                    "description": "-"
+                    "description": "user_id пользователя"
                 }
             ]
         }
