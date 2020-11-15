@@ -50,6 +50,11 @@
         }
     },
     "common": {
+        "getTopCounts": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Данные из шапки (цвет, каунтеры)"
+        },
         "getOAuthLinks": {
             "version": 1,
             "httpmethod": "POST",
